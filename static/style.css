@@ -1,0 +1,41 @@
+* { box-sizing: border-box; }
+body { margin:0; font-family: Inter, Arial, sans-serif; background:#f5f7fb; color:#172033; }
+header { background:#111827; color:white; }
+.container { width:min(1120px, 92%); margin:auto; }
+.nav { display:flex; justify-content:space-between; align-items:center; padding:18px 0; }
+.brand { font-size:24px; font-weight:800; }
+.brand span { color:#60a5fa; }
+.tag { color:#cbd5e1; font-size:14px; }
+.hero { padding:55px 0 30px; }
+.hero h1 { font-size:42px; line-height:1.1; max-width:760px; margin:0 0 15px; }
+.hero p { font-size:18px; color:#64748b; max-width:760px; }
+.card { background:white; border-radius:18px; padding:26px; margin:20px 0; box-shadow:0 8px 30px rgba(15,23,42,.07); }
+.grid { display:grid; gap:20px; }
+.top-grid { grid-template-columns:1fr 1.5fr 1fr; }
+h2 { margin-top:0; }
+.drop { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; min-height:150px; border:2px dashed #cbd5e1; border-radius:15px; cursor:pointer; text-align:center; }
+.drop input { display:none; }
+.drop span { color:#64748b; }
+button { margin-top:15px; border:0; border-radius:10px; padding:12px 20px; background:#2563eb; color:white; font-weight:700; cursor:pointer; }
+button:hover { opacity:.9; }
+.score { font-size:64px; font-weight:800; }
+.chips { display:flex; flex-wrap:wrap; gap:8px; }
+.chip { padding:7px 10px; background:#e0f2fe; color:#075985; border-radius:999px; font-size:13px; }
+.jobs { display:grid; grid-template-columns:repeat(2,1fr); gap:15px; }
+.job { border:1px solid #e2e8f0; border-radius:14px; padding:18px; }
+.job h3 { margin:0 0 5px; }
+.match { font-size:28px; font-weight:800; }
+.good { color:#15803d; }
+.warn { color:#b45309; }
+.two { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+input, textarea { width:100%; padding:12px; border:1px solid #cbd5e1; border-radius:10px; margin:7px 0; font:inherit; }
+ul { line-height:1.8; }
+.hidden { display:none; }
+#status { margin-top:12px; color:#475569; }
+.small { color:#64748b; font-size:13px; }
+footer { text-align:center; padding:30px; color:#64748b; }
+@media(max-width:800px) {
+  .top-grid,.jobs,.two { grid-template-columns:1fr; }
+  .hero h1 { font-size:34px; }
+  .tag { display:none; }
+}

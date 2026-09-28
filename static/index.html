@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Resume Analyzer</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <div class="brand">Resume<span>AI</span></div>
+    <div class="tag">Resume Analyzer & Job Recommender</div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <h1>Turn your resume into a career roadmap.</h1>
+    <p>Upload your resume to get an ATS-style score, extracted skills, improvement suggestions, and personalized job matches.</p>
+  </section>
+
+  <section class="card upload-card">
+    <h2>1. Upload Resume</h2>
+    <form id="resumeForm">
+      <label class="drop">
+        <input id="resume" type="file" accept=".pdf,.docx" required>
+        <strong>Choose a PDF or DOCX</strong>
+        <span id="fileName">No file selected</span>
+      </label>
+      <button type="submit">Analyze Resume</button>
+    </form>
+    <div id="status"></div>
+  </section>
+
+  <section id="results" class="hidden">
+    <div class="grid top-grid">
+      <div class="card score-card">
+        <h2>Resume Score</h2>
+        <div id="score" class="score">--</div>
+        <p id="scoreText"></p>
+      </div>
+      <div class="card">
+        <h2>Detected Skills</h2>
+        <div id="skills" class="chips"></div>
+      </div>
+      <div class="card">
+        <h2>Resume Details</h2>
+        <div id="details"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Improvement Suggestions</h2>
+      <ul id="suggestions"></ul>
+    </div>
+
+    <div class="card">
+      <h2>Recommended Jobs</h2>
+      <div id="jobs" class="jobs"></div>
+    </div>
+
+    <div class="card">
+      <h2>2. Match a Custom Job</h2>
+      <form id="jobForm">
+        <div class="two">
+          <input id="jobTitle" placeholder="Job title" required>
+          <input id="company" placeholder="Company">
+        </div>
+        <textarea id="jobDescription" rows="7" placeholder="Paste the complete job description here..." required></textarea>
+        <input id="jobSkills" placeholder="Required skills, comma separated (optional)">
+        <button type="submit">Calculate Match</button>
+      </form>
+      <div id="customResult"></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Analysis History</h2>
+    <div id="history">Upload a resume to create your first analysis.</div>
+  </section>
+</main>
+
+<footer>AI Resume Analyzer • Local NLP matching • FastAPI + SQLite</footer>
+<script src="/static/app.js"></script>
+</body>
+</html>
